@@ -1,0 +1,71 @@
+<script>
+  document.getElementById("btn").addEventListener("click", uploadUsers);
+  document.getElementById("btn2").addEventListener("click", clearAllUsers);
+  function uploadUsers(){
+    var finishedText = document.getElementById("finishedText");
+    finishedText.textContent = "Uploading ...";
+    google.script.run.withSuccessHandler(setFinishText).withFailureHandler(setFailureText).uploadAllEntries();
+  }
+  
+  function setFinishText(rows){
+    if (rows >= 0){
+      var number = rows -1;
+      finishedText.textContent = "Finished uploading " + number +" users.";
+    }
+    else{
+      finishedText.textContent = "Error: The user ["+ rows +"] already exists in the database (delete this row from the google sheets to continue)";
+    }
+  }
+
+  function setFailureText(){
+    finishedText.textContent = "Encountered some failure, check if the Recovery Phones are valid E.164 numbers (delete this row from the google sheets to continue)";
+  }
+  
+  function clearAllUsers(){
+    google.script.run.clearAllEntries();
+  }
+  
+
+  document.addEventListener("DOMContentLoaded", function(){
+    google.script.run.withSuccessHandler(setRowData).getRowData();
+
+    var tbody = document.getElementById("table-body");
+
+
+    function setRowData(data){
+      
+      if(data[0].length == 1){
+        var col1 = document.createElement("td");
+        var row = document.createElement("tr");
+
+        col1.textContent = "No Data found";
+
+        row.appendChild(col1);
+        
+        tbody.appendChild(row);
+      }
+      for (let i = 1; i < data[0].length; i++){
+        var col1 = document.createElement("td");
+        var col2 = document.createElement("td");
+        var col3 = document.createElement("td");
+        var col4 = document.createElement("td");
+        var row = document.createElement("tr");
+
+        col1.textContent = data[0][i] + " " + data[1][i];
+        col2.textContent = data[2][i];
+        col3.textContent = data[3][i];
+        col4.textContent = data[4][i-1];
+
+        row.appendChild(col1);
+        row.appendChild(col2);
+        row.appendChild(col3);
+        row.appendChild(col4);
+        
+        tbody.appendChild(row);
+      }
+      
+    }
+
+  });
+  
+</script>
