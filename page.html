@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <?!= include("page-css"); ?>
+  </head>
+  
+  <hr>
+
+  <div class="topnav">
+    <h1> User Intake Application Dashboard </h1>
+    <a href=<?=sheetURL;?>> This is a link to the spreadsheet containing their intake form data <br> <?!= sheetURL; ?> </a>
+  </div>
+  <body>
+    
+    <hr>
+    <h3> Quick Actions </h3>
+    <div class="myDiv">
+      <button id="btn2">Clear All Users</button>
+      <form action=<?=sheetURL;?>>
+      <input type="submit" value="Go to Spreadsheet" />
+      </form>
+      <button id="btn">Upload All Users to Workspace & Send Emails</button>
+    </div>
+
+    <hr>
+
+    <h3 id="finishedText"> </h3>
+      
+    <h3> Google Form Applications </h3>
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <table>
+
+          <thead>
+            <tr>
+              <th>Full Name</th>
+              <th>Recovery Email <br> (Automatic Email is Sent Here)</th>
+              <th>Recovery Phone</th>
+              <th>New Email</th>
+            </tr>
+          </thead>
+
+          <tbody id="table-body">
+           
+          </tbody>
+          
+        </table>
+        </div>
+      </div>
+    </div>
+
+    <?!= include("page-js"); ?>
+  </body>
+  <hr>
+  <br>
+  <div id="footer">
+      Created by Victor Do
+  </div>
+</html>
