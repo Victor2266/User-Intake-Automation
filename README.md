@@ -19,8 +19,10 @@ Their data is added to a Google Sheet after they fill out a Google Form and this
 </ul>
 
 <h2>Google Form Optional</h2>
-- Secondary Work Email
-- Recovery Phone
-- Mobile Phone
-- Home Address
-- Home PostalCode
+<ul>
+  <li>Secondary Work Email</li>
+  <li>Recovery Phone</li>
+  <li>Mobile Phone</li>
+  <li>Home Address</li>
+  <li>Home PostalCode</li>
+</ul>
