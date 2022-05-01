@@ -5,3 +5,4 @@ Their data is added to a Google Sheet after they fill out a Google Form and this
 
 
 ![User Intake Dashboard](https://user-images.githubusercontent.com/46388269/166128132-f1d3e67f-c3d2-4a0a-a24b-fa03cb73be0e.png)
+![email sample](https://user-images.githubusercontent.com/46388269/166128358-891292b7-d665-4142-8a14-66c853d9232f.png)
