@@ -17,8 +17,8 @@ Their data is added to a Google Sheet after they fill out a Google Form and this
 - Recovery Email
 
 <h2>Google Form Optional</h2>
-- Work_Secondary_Email
-- Recovery_Phone
-- Mobile_Phone
-- Home_Address
-- Home_PostalCode
+- Secondary Work Email
+- Recovery Phone
+- Mobile Phone
+- Home Address
+- Home PostalCode
